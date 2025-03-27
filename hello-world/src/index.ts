@@ -7,5 +7,9 @@ let course2 = "Typescript";
 let is_published2 = true;
 
 let level;
+level = 1;
+level = 'a';
 
-
+function render(document) {
+    console.log(document);
+}

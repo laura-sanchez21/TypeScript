@@ -26,3 +26,12 @@ ISSUES
 tsc.ps1 cannot be loaded because running scripts is disabled on this system
 Run: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 in powershell as administrator
+
+Type Any is a type that defeats the purpose of TypeScript. As we use Typescript
+ for type safety
+
+ Typescript config links:
+ https://www.typescriptlang.org/tsconfig/#strict
+
+ We can set "noImplicitAny": false, to allow us to not use types when declaring variables
+ 
