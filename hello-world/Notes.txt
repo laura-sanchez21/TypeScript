@@ -1,0 +1,28 @@
+Creating ts config file
+tsc --init
+
+modifying the target with "ctrl" + "space bar" in the tsconfig.json target section
+"target": ""
+Really depends on where you want to deploy your application
+
+"rootDir": "./src",  
+is for source files "./" represents the current folder
+
+"outDir": "./",
+is used to specify the directory that will contain our javascript files 
+
+"removeComments": true, 
+When enabled the TypeScript compiler is going to remove all the comments that we add
+in our TypeScript code so that the generated javascript code is going to be shorter
+
+"noEmitOnError": true,
+Prevents the TypeScript compiler from generating any javascript files
+
+"sourceMap": true,
+specifies how each line of our TypeScript code maps to the generated
+javascript code
+
+ISSUES
+tsc.ps1 cannot be loaded because running scripts is disabled on this system
+Run: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+in powershell as administrator
