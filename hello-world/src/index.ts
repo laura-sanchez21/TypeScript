@@ -1,11 +1,13 @@
-//1, "Laura", known as a tuple
-//This is a tuple that is similar to mapping
-let user: [number, string][] = [[1, "Laura"]];
-user[0].toString();
-user[1].length;
+// const small = 1;
+// const medium = 2;
+// const large = 3;
 
-//user.push(1); // not allowed as it needs to contain both a number and a string.
-user.push([11, "London"]);
+// enum Size { Small = 's', Meduium = 'm', Large = 'l'};
 
-let user2: [number, string] = [1, "Laura"];
-let user3: [number, string, boolean, number] = [1, "Laura", true, 15]; 
+// enum SizeTwo { Small = 1, Meduium, Large};
+// let mySize = SizeTwo.Meduium;
+// console.log(mySize);
+
+const enum SizeTwo { Small = 1, Meduium, Large};
+let mySize = SizeTwo.Meduium;
+console.log(mySize);
