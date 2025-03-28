@@ -35,3 +35,4 @@ https://www.typescriptlang.org/tsconfig/#strict
 
 We can set "noImplicitAny": false, to allow us to not use types when declaring variables
  
+Restrict tuples to only 2 values. As it's best to keep trakc of key-value pairs
