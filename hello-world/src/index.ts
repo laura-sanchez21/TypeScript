@@ -1,15 +1,9 @@
-let sales: number = 123_456_789;
-let course: string = "TypeScript";
-let is_published: boolean = true;
+let numbers = [1, 2, 3];
+let numbers2: number[] = [1, 2, 3];
+let numbers3 = [];
 
-let sales2 = 123_456_789;
-let course2 = "Typescript";
-let is_published2 = true;
+let numbers4: number[] = []
+numbers4[0] = 1;
+numbers4[1] = 2;
 
-let level;
-level = 1;
-level = 'a';
-
-function render(document) {
-    console.log(document);
-}
+numbers.forEach(n => console.log(n.toString()));
