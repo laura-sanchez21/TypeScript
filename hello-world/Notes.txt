@@ -41,8 +41,12 @@ By default the typescript compiler assigns the first member the value of zero.
 
 definig enums with const will generate more optimized javascript code.
 
+executed: tsc
 executing javascript file: node dist/index.js 
 directory: TypeScript\hello-world
+
+executed: tsc
+directory: TypeScript>
 
 "noUnusedParameters": true, to notify us if the variable in the function is not used.
 
