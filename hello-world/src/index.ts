@@ -6,7 +6,7 @@ function calculateTax(income: number, taxYear: number = 2022): number {
     //if(taxYear < 2022) //taxYear will complain because of the ? to solve this do the following
     //if((taxYear || 2022) < 2022) //this is one approach the second is to define taxYear in the function
     if(taxYear < 2022)
-    return income * 1.2;
+        return income * 1.2;
     return income * 1.3;
 }
 
