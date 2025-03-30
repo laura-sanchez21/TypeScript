@@ -53,3 +53,5 @@ directory: TypeScript>
 "noImplicitReturns": true, used to ensure we return a value in a function
 
 "noUnusedLocals": true, warn users that there are unused variables
+
+readonly modifier, we are no longer allowed to change the value of a property
