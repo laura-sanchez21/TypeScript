@@ -1,13 +1,21 @@
-function kgToLbs(weight: number |  string): number {
-    //Narrowing
-    if(typeof weight == 'number') {
-        return weight * 2.2;
-    }
-    else {
-        return parseInt(weight) * 2.2;
-    }
-};
+let weight: number | string;
+//This is not possible
+//let weightTwo: number & string;
+type Draggable = {
+    drag: () => void;
+}
 
-kgToLbs(19);
-kgToLbs("100kg");
-kgToLbs('10kg');
+type Resizeable = {
+    resize: () => void;
+}
+
+type UIWidget = Draggable & Resizeable;
+
+let textBox: UIWidget = {
+    drag: () => {
+        console.log("Dragging");
+    },
+    resize: () => {
+        console.log("Resizing");
+    }
+}
