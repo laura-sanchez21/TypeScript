@@ -1,8 +1,15 @@
 "use strict";
-function calculateTax(income, taxYear = 2022) {
-    if (taxYear < 2022)
-        return income * 1.2;
-    return income * 1.3;
+//missing :numner as it is only needed for the compiler, to type-chaeck
+function kgToLbs(weight) {
+    if (typeof weight == 'number') {
+        return weight * 2.2;
+    }
+    else {
+        return parseInt(weight) * 2.2;
+    }
 }
-calculateTax(10000, 2022);
+;
+kgToLbs(19);
+kgToLbs("100kg");
+kgToLbs('10kg');
 //# sourceMappingURL=index.js.map

@@ -55,3 +55,5 @@ directory: TypeScript>
 "noUnusedLocals": true, warn users that there are unused variables
 
 readonly modifier, we are no longer allowed to change the value of a property
+
+Initializing strings can be done by using "" or '' 

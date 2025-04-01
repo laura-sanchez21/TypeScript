@@ -1,43 +1,13 @@
-type Employee = {
-    readonly id: number;
-    name: string;
-    retire: (date: Date) => void;
-}
-
-type ExtendedEmployee = Employee & {
-    promote: () => void;
-}
-
-let employee: Employee = {
-    id: 1,
-    name: "Laura",
-    retire: (date: Date) => {
-        console.log(date);
+function kgToLbs(weight: number |  string): number {
+    //Narrowing
+    if(typeof weight == 'number') {
+        return weight * 2.2;
     }
-}
-
-let extendedEmployee: ExtendedEmployee = {
-    id: 1,
-    name: "Laura",
-    retire: (date: Date) => {
-        console.log(date);
-    },
-    promote: () =>  {
-        console.log("Employee promoted");
+    else {
+        return parseInt(weight) * 2.2;
     }
+};
 
-}
-
-// let employee: {
-//     readonly id: number,
-//     name: string,
-//     retire: (date: Date) => void
-// } = {
-
-//using object expansion to expand Employee
-// const extendedEmployee = {
-//     ...employee,
-//     promoted: () => {
-//         console.log("Employee has been promoted");
-//     }
-// }
+kgToLbs(19);
+kgToLbs("100kg");
+kgToLbs('10kg');
