@@ -1,21 +1,9 @@
-let weight: number | string;
-//This is not possible
-//let weightTwo: number & string;
-type Draggable = {
-    drag: () => void;
-}
+//let quanitiy = 100;
 
-type Resizeable = {
-    resize: () => void;
-}
+//we want the quantity to be 50 or 100
+//let quantity: number; //instead of initializing quanitity to a number
 
-type UIWidget = Draggable & Resizeable;
-
-let textBox: UIWidget = {
-    drag: () => {
-        console.log("Dragging");
-    },
-    resize: () => {
-        console.log("Resizing");
-    }
-}
+//Literal (exact, specific)
+//let quantity: 50 | 100 = 51
+type Quantity =  50 | 100;
+let quantity: Quantity = 100;
