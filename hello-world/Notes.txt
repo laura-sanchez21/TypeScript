@@ -57,3 +57,5 @@ directory: TypeScript>
 readonly modifier, we are no longer allowed to change the value of a property
 
 Initializing strings can be done by using "" or '' 
+
+never set "strictNullChecks": false, as it removes type safety
