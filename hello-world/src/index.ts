@@ -1,22 +1,12 @@
-type Customer = {
-    birthday?: Date;
+let speed: number | null = null;
+//let ride: Ride
+let ride = {
+    //javascript
+    //speed: speed | 30
+    //falsy values in javascript: undefined, null, '', false, 0
+    //what if we want to set the speed to 0
+    //speed: speed !== null ? speed : 30
+
+    //Nullish coalescing operator
+    speed: speed ?? 30 
 }
-
-function getCustomer(id: number): Customer | null | undefined{
-    return id === 0 ? null : { birthday: new Date() };
-}
-
-let customer = getCustomer(1);
-// if(customer !== null && customer !== undefined)
-//Optional property access operator
-console.log(customer?.birthday?.getFullYear());
-
-//Optional element access operator
-//if(customers !== null && customers !== undefined)
-    //customers?. [0]
-
-//Optional call
-//let log: any = (message: string) => console.log(message);
-let log: any = null;
-log?.('a')
-
