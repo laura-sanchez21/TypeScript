@@ -1,12 +1,7 @@
-let speed: number | null = null;
-//let ride: Ride
-let ride = {
-    //javascript
-    //speed: speed | 30
-    //falsy values in javascript: undefined, null, '', false, 0
-    //what if we want to set the speed to 0
-    //speed: speed !== null ? speed : 30
+//as keyword has nothing to do with type conversionn
+//let phone = document.getElementById('phone') as HTMLInputElement;
+let phone = <HTMLInputElement> document.getElementById('phone');
+//HTMLElement
+//HTMLInputElement
 
-    //Nullish coalescing operator
-    speed: speed ?? 30 
-}
+phone.value
