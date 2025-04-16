@@ -1,51 +1,85 @@
-// Given the data below, define a type alias for representing users.
-// let users = [
-//     {
-//         name: 'John Smith',
-//         age: 30,
-//         occupation: 'Software engineer'
-//     },
-//     {
-//         name: 'Kate Müller',
-//         age: 28
+// //Part 1
+// type Employee = {
+//     hame: string;
+//     age: number;
+//     department ?: string;
+//     isActive : boolean;
+// }
+
+// //Part 2
+// type Car = {
+//     wheels: number;
+//     drive(): void;
+// }
+
+// type Bike = {
+//     wheels: number;
+//     pedal(): void;
+// }
+
+// type Vehicle = Car | Bike;
+
+// //Part 3
+// let user = {
+//     profile: {
+//         address: {
+//             city: "Berlin"
+//         }
 //     }
-// ];
+// };
+// console.log(user?.profile?.address?.city);
 
-type User = {
-    name: string;
-    age: number;
-    occupation?: string;
+// //part 4
+// // let name: string | null = null;
+// // let displayName = name ?? "Guest";
+
+// //Part 5
+// let score = 42;        // number
+// let title = "Quiz!";   // string
+// let flags = [true];    // boolean[]
+// let empty = [];        // any[]
+
+// //Part 6
+// let movie: {
+//     title: string,
+//     duration: number
+//   } = {
+//     title: "Epic Movie"
+//   };
+
+//   //Need to initialize duration
+
+//   //Part 7
+//   let input: unknown = "typescript";
+
+//   if (typeof input ===  'string')
+//         console.log(input.toUpperCase());
+
+type Car = {
+    type: "car";
+    wheels: 4;
+    drive(): void;
 }
 
-//Birds fly. Fish swim. A Pet can be a Bird or Fish. Use type aliases to represent these
-type Bird = {
-    type: "bird";
-    fly: () => void;
+type Bike = {
+    type: "bike";
+    wheels: 2;
+    pedal(): void;
 }
 
-type Fish = {
-    type: "fish";
-    swim: () => void;
+type Vehicle = Car | Bike;
+
+// Your answer:
+function handleVehicle(vehicle: Vehicle): void {
+    switch(vehicle.type) {
+        case 'bike':
+            vehicle.pedal();
+            break;
+        case 'car':
+            vehicle.drive();
+            break;
+        default:
+            break;
+    }
+    console.log("Using a vehicle with X wheels " + vehicle.wheels );
 }
-
-type Pet = Bird | Fish;
-
-//Define a type for representing the days of week. Valid values are “Monday”, “Tuesday”,
-//etc
-type DayOfWeek = 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday';
-
-//Simplify the following code snippets:
-// let user = getUser();
-// console.log(user && user.address ? user.address.street : undefined);
-console.log(user?.address?.street);
-
-// let x = foo !== null && foo !== undefined ? foo : bar()
-let x = foo ?? bar()
-
-//What is the problem in this piece of code?
-let value: unknown = 'a';
-if (typeof value === 'string')
-    console.log(value.toUpperCase());
-
-//when a type is unkown you have to check the type to use functionn calls like toUpperCase
-//as it is only related to strings
