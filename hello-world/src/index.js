@@ -11,7 +11,9 @@ var Account = /** @class */ (function () {
     };
     return Account;
 }());
+
 var account = new Account(1, "Laura", 0);
+
 account.deposit(100);
 console.log("Account balance: " + account.balance);
 console.log(account);

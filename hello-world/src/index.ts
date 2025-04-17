@@ -1,7 +1,8 @@
 class Account {
-    id: number;
+    readonly id: number;
     owner: string;
     balance: number;
+    nickname?: string;
 
     constructor (id: number, owner: string, balance: number) {
         this.id = id;
@@ -10,6 +11,7 @@ class Account {
     }
 
     deposit(amount: number): void {
+        //this.id = 0;
         if(amount <= 0)
             throw new Error("Invalid amount!");
         this.balance += amount;
@@ -17,6 +19,8 @@ class Account {
 }
 
 let account = new Account(1, "Laura", 0);
+//account.id = 0;
+
 account.deposit(100);
 console.log("Account balance: " + account.balance);
 console.log(account);
