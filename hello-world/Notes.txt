@@ -61,3 +61,5 @@ Initializing strings can be done by using "" or ''
 never set "strictNullChecks": false, as it removes type safety
 
 "allowUnreachableCode": false, we are not allowing unreachable code
+
+Access Modifiers: public, private, and protected
