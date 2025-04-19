@@ -15,19 +15,32 @@ class Account {
         this._balance += amount;
     }
 
-    getBalance(): number {
+    // getBalance(): number {
+    //     return this._balance;
+    // }
+
+    get balance(): number {
         return this._balance;
     }
 
-    private calculateTax(): void {
+    // set balance(value: number) 
+    // {
+    //     if(value <= 0) {
+    //         throw Error("Invalid value!");
+    //     }
 
+    //     this._balance = value;
+    // }
+
+    private calculateTax(): void {
     }
 }
 
 let account = new Account(1, "Laura", 0);
 //account.id = 0; error: id is readonly
 //account.balance -= 1; error: balance is private
-console.log(account.getBalance);
+console.log(account.balance);
+//account.balance = 1;
 
 account.deposit(100);
 //console.log("Account balance: " + account.balance);
