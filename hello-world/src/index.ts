@@ -13,4 +13,4 @@ let seats = new SeatAssignment();
 seats.A1 = "Mosh";
 //seats['A1'] = "Mosh"; identical to the above line
 seats.A2 = "John";
-seats.A2 = 1; 
+//seats.A2 = 1;  //error: value is expected to be string
