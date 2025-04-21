@@ -1,16 +1,22 @@
-class SeatAssignment {
-   //index signature properties
-   //using a number
-   //[seatNumber: number]: string;
-   [seatNumber: string]: string;
+class Ride {
+   private static _activeRides: number = 0;
+   //constructor(public activeRides: number) {
+   //}
+   start() { Ride._activeRides++; }
+ 
+   stop() { Ride._activeRides--; }
+
+   static get activeRides(): number {
+      return Ride._activeRides;
+   }
 }
 
-//let seats = new  SeatAssignment();
-//initializing 1 with 'm'
-//seats[1] = "m"
+//Ride.activeRides = 10; // Error: activeRides is private
 
-let seats = new SeatAssignment();
-seats.A1 = "Mosh";
-//seats['A1'] = "Mosh"; identical to the above line
-seats.A2 = "John";
-//seats.A2 = 1;  //error: value is expected to be string
+let ride1 = new Ride;
+ride1.start();
+
+let ride2 = new Ride();
+ride2.start()
+
+console.log(Ride.activeRides);

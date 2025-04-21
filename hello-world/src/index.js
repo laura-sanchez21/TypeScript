@@ -1,23 +1,16 @@
-var Account = /** @class */ (function () {
-    function Account(id, owner, balance) {
-        this.id = id;
-        this.owner = owner;
-        this.balance = balance;
+var Ride = /** @class */ (function () {
+    function Ride() {
     }
-    Account.prototype.deposit = function (amount) {
-        if (amount <= 0)
-            throw new Error("Invalid amount!");
-        this.balance += amount;
-    };
-    return Account;
+    //constructor(public activeRides: number) {
+    //}
+    Ride.prototype.start = function () { Ride.activeRides++; };
+    Ride.prototype.stop = function () { Ride.activeRides--; };
+    Ride.activeRides = 0;
+    return Ride;
 }());
-
-var account = new Account(1, "Laura", 0);
-
-account.deposit(100);
-console.log("Account balance: " + account.balance);
-console.log(account);
-console.log("Typeof " + typeof account);
-console.log("Instance of Account: " + (account instanceof Account));
-//union
-//if (typeof someObj === 'number')
+var ride1 = new Ride;
+ride1.start();
+var ride2 = new Ride();
+ride2.start();
+console.log("Ride1: " + Ride.activeRides);
+console.log("Ride2: " + Ride.activeRides);
