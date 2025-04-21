@@ -68,3 +68,7 @@ static property: Is a property that belongs to a class and not an object
 
 No modifiers like public, private, protected for child classes when initializing
 the parent class through super(). 
+
+use super.method() to access parent methods and super() to call the constructor
+
+"noImplicitOverride": true, doesn't allow implicit overriding
