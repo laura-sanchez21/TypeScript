@@ -65,3 +65,6 @@ never set "strictNullChecks": false, as it removes type safety
 Access Modifiers: public, private, and protected
 
 static property: Is a property that belongs to a class and not an object
+
+No modifiers like public, private, protected for child classes when initializing
+the parent class through super(). 

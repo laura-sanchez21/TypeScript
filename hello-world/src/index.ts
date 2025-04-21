@@ -1,22 +1,30 @@
-class Ride {
-   private static _activeRides: number = 0;
-   //constructor(public activeRides: number) {
-   //}
-   start() { Ride._activeRides++; }
- 
-   stop() { Ride._activeRides--; }
+class Person {
+   constructor(
+      public firstName: string, 
+      public lastName: string) { }
 
-   static get activeRides(): number {
-      return Ride._activeRides;
+      walk() { console.log("Walking"); }
+
+      talk() { console.log("Talking"); }
+
+      get fullName() {
+         return this.firstName + " " + this.lastName;
+      }
+}
+
+class Student extends Person {
+   constructor(
+      public studentId: number, 
+      firstName: string, 
+      lastName: string) {
+         super(firstName, lastName);
+      }
+
+   takeTest() {
+      console.log("Taking a test!");
    }
 }
 
-//Ride.activeRides = 10; // Error: activeRides is private
-
-let ride1 = new Ride;
-ride1.start();
-
-let ride2 = new Ride();
-ride2.start()
-
-console.log(Ride.activeRides);
+let student = new Student(123, "John", "Doe");
+student.talk();
+student.takeTest();
