@@ -79,3 +79,5 @@ polymorphism: the ability for an object to take different forms
 
 Protected is similar to private, but you are allowed to override the protected method 
 and access it in a subclass — just not when the object is declared
+
+abstract methods can only exist in abstract classes
