@@ -72,3 +72,10 @@ the parent class through super().
 use super.method() to access parent methods and super() to call the constructor
 
 "noImplicitOverride": true, doesn't allow implicit overriding
+
+Open closed principle: Classes should be open for extension and closed for modification
+
+polymorphism: the ability for an object to take different forms
+
+Protected is similar to private, but you are allowed to override the protected method 
+and access it in a subclass — just not when the object is declared

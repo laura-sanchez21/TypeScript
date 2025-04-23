@@ -29,32 +29,41 @@ var Person = /** @class */ (function () {
     });
     return Person;
 }());
-// class Student extends Person {
-//    constructor(
-//       public studentId: number, 
-//       firstName: string, 
-//       lastName: string) {
-//          super(firstName, lastName);
-//       }
-//    takeTest() { console.log("Taking a test!"); }
-// }
-var Teacher = /** @class */ (function (_super) {
-    __extends(Teacher, _super);
-    function Teacher(firstName, lastName) {
-        return _super.call(this, firstName, lastName) || this;
+var Student = /** @class */ (function (_super) {
+    __extends(Student, _super);
+    function Student(studentId, firstName, lastName) {
+        var _this = _super.call(this, firstName, lastName) || this;
+        _this.studentId = studentId;
+        return _this;
     }
-    Object.defineProperty(Teacher.prototype, "fullName", {
-        //we do not need override as we are just adding "Professor"
-        get: function () {
-            return "Professor " + this.firstName + " " + this.lastName;
-            //return "Professor " + super.fullName;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Teacher.prototype.walk = function () { console.log("Professor is Walking"); };
-    return Teacher;
+    Student.prototype.talk = function () {
+        console.log("Student is talking");
+    };
+    Student.prototype.takeTest = function () {
+        this.talk();
+        console.log("Taking a test!");
+    };
+    return Student;
 }(Person));
-var teacher = new Teacher("John", "Doe");
-console.log(teacher.fullName);
-teacher.walk();
+var student = new Student(123, "tom", "riddle");
+student.talk();
+// class Teacher extends Person {
+//    override get fullName() {
+//       return "Professor " + this.firstName + " " + this.lastName;
+//    }
+// }
+// class Principal extends Person {
+//    override get fullName() {
+//       return "Principal " + this.firstName + " " + this.lastName;
+//    }
+// }
+// printName([
+//    new Student(123, "John", "doe"),
+//    new Teacher("foo", "doo"),
+//    new Principal("Tom", "Soe")
+// ])
+// function printName(people: Person[]) {
+//    for ( let person of people) {
+//       console.log(person.fullName);
+//    }
+// }
