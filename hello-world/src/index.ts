@@ -1,20 +1,27 @@
-abstract class Shape {
-   constructor(public color: string) {
+// abstract class Calender {
+//    constructor(public name:String) { }
 
-   }
-   abstract render(): void;
+//    abstract addEvent():void;
+//    abstract removeEvent():void;
+// }
+
+interface ICalendar {
+   name: string;
+   addEvent(): void;
+   removeEvent(): void;
 }
 
-class Circle extends Shape {
-   constructor(public radius: number, color: string) {
-      super(color); 
-   }
-
-   override render() { 
-      console.log("Rendering a Circle");
-   }
+interface ICloudCalendar extends ICalendar {
+   sync(): void;
 }
 
-//rendering a shape makes 0 sense so make the class an abstract
-//let shape = new Shape("red");
-//shape.render();
+class GoogleCalendar implements ICalendar {
+   constructor(public name: string) {}
+   
+   addEvent(): void {
+      throw new Error("Method not implemented.");
+   }
+   removeEvent(): void {
+      throw new Error("Method not implemented.");
+   }
+}
