@@ -81,3 +81,5 @@ Protected is similar to private, but you are allowed to override the protected m
 and access it in a subclass — just not when the object is declared
 
 abstract methods can only exist in abstract classes
+
+Generic classes are the same thing as template classes in C++
