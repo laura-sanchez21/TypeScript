@@ -1,27 +1,81 @@
-// abstract class Calender {
-//    constructor(public name:String) { }
+// Define a class called Logger that takes the name of a file in its
+// constructor and provides a method for writing messages to that file.
+// Don’t worry about the actual file I/O operations. Just define the
+// class with the right members.
 
-//    abstract addEvent():void;
-//    abstract removeEvent():void;
-// }
+class Logger {
+   constructor(public fileName: string) {
 
-interface ICalendar {
+   }
+
+   Log(message:string) {
+
+   }
+}
+
+// //Given the Person class below, create a getter for 
+// // getting the full name of a person
+class Person {
+   constructor(
+      public firstName: string, 
+      public lastName: string) {}
+
+      get fullName() {
+         return this.firstName + " " + this.lastName;
+      }
+   }
+
+// //Create a new class called Employee that extends Person and adds a new
+// //property called salary
+class Employee extends Person {
+
+   constructor(public salary: number, firstName: string, lastName: string) {
+      super(firstName, lastName);
+   }
+}
+
+//What is the difference between private and protected members?
+
+A private member cannot be accessed through subclasses, nor can it be 
+accessed when the object is instantiated. It can only be accessed within 
+the class in which it was declared. It cannot be overridden if the class is inherited.
+
+A protected member is similar to a private member, with the key difference that 
+it can be accessed and overridden when the class is inherited. When the object 
+is instantiated, the method cannot be called from the object itself.
+
+//Given the data below, define an interface for representing employees
+let employee = {
+   name: 'John Smith',
+   salary: 50_000,
+   address: {
+   street: 'Flinders st',
+   city: 'Melbourne',
+   zipCode: 3144,
+   },
+   }
+
+interface IAddress {
+   street: string;
+   city: string;
+   zipCode: number;
+}
+
+interface IEmployees {
    name: string;
-   addEvent(): void;
-   removeEvent(): void;
+   salary: number;
+   address: IAddress;
 }
 
-interface ICloudCalendar extends ICalendar {
-   sync(): void;
+class Person implements IEmployees {
+
+   constructor(
+      public name: string, 
+      public salary: number, 
+      public address: IAddress) {
+
+   }
 }
 
-class GoogleCalendar implements ICalendar {
-   constructor(public name: string) {}
-   
-   addEvent(): void {
-      throw new Error("Method not implemented.");
-   }
-   removeEvent(): void {
-      throw new Error("Method not implemented.");
-   }
-}
+let person = new Person("foo doo", 50000, {street: "foo st", city: "doo town", zipCode: 123} )
+console.log(person.address);
