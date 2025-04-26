@@ -1,26 +1,23 @@
-///Original
-function wrapInArray1(value: number) {
-   return [value];
+interface Result<T>{
+   data: T | null;
+   error: string | null;
 }
 
-let numbers = wrapInArray1(1);
-
-//Generic Type
-function wrapInArray2<T>(value: T) {
-   return [value];
+function fetch<T>(url: string): Result<T> {
+   return {data: null, error: null};
 }
 
-let numbers2 = wrapInArray2(1);
-let numbers3 = wrapInArray2('1');
+interface User {
+   username: string;
 
-class ArrayUtils {
-   static wrapInArray3<T>(value: T) {
-      return [value];
-   }
 }
 
-// let utils = new ArrayUtils();
-// let numbers4 = utils.wrapInArray3(5);
+interface Product {
+   title: string;
+}
 
-//Making the function static
-let numbers4 = ArrayUtils.wrapInArray3(5);
+let result = fetch<User>('url');
+result.data?.username
+
+let result2 = fetch<Product>('URL');
+result2.data?.title;
