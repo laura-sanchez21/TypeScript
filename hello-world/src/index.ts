@@ -1,23 +1,61 @@
-interface Result<T>{
-   data: T | null;
-   error: string | null;
+function echo<T>(value: T): T {
+   return value;
 }
 
-function fetch<T>(url: string): Result<T> {
-   return {data: null, error: null};
+echo("hello");
+echo(1);
+
+//Limit the type of object that we can pass to string and number
+function echo2<T extends number | string>(value: T): T {
+   return value;
 }
 
-interface User {
-   username: string;
+//echo2(true); expecting number or string
+echo2(1);
+echo2("hello");
+
+//Limit by the shape of the object
+function echo3<T extends {name: string}>(value: T): T {
+   return value;
+}
+echo3({name: "Laura"})
+
+type Person = {
+   name: string
+}
+
+let temp: Person = {
+   name: "hello"
+}
+
+function echo4<T extends Person>(value: T): T {
+   return value;
+}
+
+echo4(temp);
+
+interface Person1 {
+   name: string;
+}
+const person: Person1 = {
+   name: "Laura"
+}
+
+function echo5<T extends Person1>(value: T): T {
+   return value;
+}
+
+class Person2 {
+   constructor( public name: string) {
+   }
+}
+
+class Customer extends Person2 {
 
 }
 
-interface Product {
-   title: string;
+function echo6<T extends Person2>(value: T) {
+   return value;
 }
 
-let result = fetch<User>('url');
-result.data?.username
-
-let result2 = fetch<Product>('URL');
-result2.data?.title;
+echo(new Customer('a'));
